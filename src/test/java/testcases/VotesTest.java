@@ -63,7 +63,7 @@ public class VotesTest {
                 .get(ProjectConstants.URI_VOTES+"/{id}")
         .then()
                 .assertThat()
-                .body("country_code", Is.is("BR")).log().body();
+                .body("country_code", Is.is("BR"));
     }
 
     @Severity(SeverityLevel.NORMAL)
