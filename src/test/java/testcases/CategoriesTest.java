@@ -12,12 +12,12 @@ import requestspecification.RequestSpecificationCreator;
 import static io.restassured.RestAssured.given;
 
 @DisplayName("Tests from Categories API")
-public class CategoriesTest {
+class CategoriesTest {
 
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Validate All Categories Size")
     @Test
-    public void validateAllCategoriesSize() {
+    void validateAllCategoriesSize() {
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
@@ -33,7 +33,7 @@ public class CategoriesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Get Categories by Id")
     @Test
-    public void getCategoriesById() {
+    void getCategoriesById() {
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())

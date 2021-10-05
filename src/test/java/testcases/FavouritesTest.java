@@ -17,12 +17,12 @@ import requestspecification.RequestSpecificationCreator;
 import static io.restassured.RestAssured.given;
 
 @DisplayName("Tests from Favourites API")
-public class FavouritesTest {
+class FavouritesTest {
 
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Get all Favourites")
     @Test
-    public void getAllFavourites() {
+    void getAllFavourites() {
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
@@ -36,7 +36,7 @@ public class FavouritesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Get a Favourite by Id")
     @Test
-    public void getFavouriteById() {
+    void getFavouriteById() {
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
@@ -53,7 +53,7 @@ public class FavouritesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Creating a New Favourite")
     @Test
-    public void createANewFavourite() {
+    void createANewFavourite() {
 
         FavouritePojo favourite = new FavouritePojo();
         favourite.setImage_id(new Faker().number().digits(8));
@@ -73,7 +73,7 @@ public class FavouritesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Creating a Repeat Favourite")
     @Test
-    public void createARepeatFavourite() {
+    void createARepeatFavourite() {
 
         String imageName = new Faker().number().digits(8);
         String imageId = new Faker().name().name();
@@ -111,7 +111,7 @@ public class FavouritesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Deleting a Favourite")
     @Test
-    public void deletingAFavourite() {
+    void deletingAFavourite() {
 
         FavouritePojo favourite = new FavouritePojo();
         favourite.setImage_id(new Faker().number().digits(8));
@@ -140,7 +140,7 @@ public class FavouritesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Deleting a non-existent Favourite")
     @Test
-    public void deletingANonExistentFavourite() {
+    void deletingANonExistentFavourite() {
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())

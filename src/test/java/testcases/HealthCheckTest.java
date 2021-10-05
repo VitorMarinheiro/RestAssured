@@ -11,12 +11,12 @@ import static io.restassured.RestAssured.given;
 
 @Severity(SeverityLevel.BLOCKER)
 @DisplayName("Health Check's")
-public class HealthCheckTest {
+class HealthCheckTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Health Check API")
     @Test
-    public void healthCheck(){
+    void healthCheck(){
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
@@ -31,7 +31,7 @@ public class HealthCheckTest {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Health Check Auth")
     @Test
-    public void healthCheck_NoAuth(){
+    void healthCheck_NoAuth(){
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())

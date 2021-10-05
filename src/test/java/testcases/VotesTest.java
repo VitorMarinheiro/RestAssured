@@ -16,12 +16,12 @@ import requestspecification.RequestSpecificationCreator;
 import static io.restassured.RestAssured.given;
 
 @DisplayName("Tests from Vote API")
-public class VotesTest {
+class VotesTest {
 
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Get All Votes")
     @Test
-    public void getAllVotes(){
+    void getAllVotes(){
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
@@ -35,7 +35,7 @@ public class VotesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Validating a Entire Element")
     @Test
-    public void getASpecificVote(){
+    void getASpecificVote(){
 
 
         given()
@@ -53,7 +53,7 @@ public class VotesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Validating A Single Field")
     @Test
-    public void validateASingleField(){
+    void validateASingleField(){
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
@@ -69,7 +69,7 @@ public class VotesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Creating A Vote With POJO")
     @Test
-    public void postVoteWithPojo(){
+    void postVoteWithPojo(){
 
         VotePojo vote = new VotePojo();
         vote.setImage_id(new Faker().name().firstName());
@@ -90,7 +90,7 @@ public class VotesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Creating A Vote With String")
     @Test
-    public void postVoteWithString(){
+    void postVoteWithString(){
 
         String payload = "{\"image_id\":\""+new Faker().name().firstName()+"\",\"sub_id\":\"my-user-1234\",\"value\":1}";
 
@@ -108,7 +108,7 @@ public class VotesTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Deleting a Specific Vote")
     @Test
-    public void deleteAVote(){
+    void deleteAVote(){
 
         String payload = "{\"image_id\":\""+new Faker().name().firstName()+"\",\"sub_id\":\"my-user-1234\",\"value\":1}";
 

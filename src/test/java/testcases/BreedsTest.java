@@ -12,12 +12,12 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.containsString;
 
 @DisplayName("Tests from Breeds API")
-public class BreedsTest {
+class BreedsTest {
 
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Get All Breeds")
     @Test
-    public void getAllBreeds() {
+    void getAllBreeds() {
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
@@ -31,7 +31,7 @@ public class BreedsTest {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Get Breeds by Name")
     @Test
-    public void getBreedByName() {
+    void getBreedByName() {
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
