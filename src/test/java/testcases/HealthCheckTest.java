@@ -1,5 +1,6 @@
 package testcases;
 
+import constants.ProjectConstants;
 import header.HeaderCreator;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -21,21 +22,21 @@ public class HealthCheckTest {
                 .spec(RequestSpecificationCreator.requestSpecification())
                 .headers(HeaderCreator.headerWithAuthToken())
         .when()
-                .get("/votes")
+                .get(ProjectConstants.URI_VOTES)
         .then()
                 .statusCode(200);
 
     }
 
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Health Check API Auth")
+    @DisplayName("Health Check Auth")
     @Test
     public void healthCheck_NoAuth(){
 
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
         .when()
-                .get("/votes")
+                .get(ProjectConstants.URI_VOTES)
         .then()
                 .statusCode(401);
 
