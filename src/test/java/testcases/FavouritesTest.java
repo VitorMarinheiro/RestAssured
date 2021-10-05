@@ -16,6 +16,7 @@ import requestspecification.RequestSpecificationCreator;
 
 import static io.restassured.RestAssured.given;
 
+@DisplayName("Tests from Favourites API")
 public class FavouritesTest {
 
     @Severity(SeverityLevel.NORMAL)

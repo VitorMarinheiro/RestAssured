@@ -9,11 +9,11 @@ import org.junit.jupiter.api.Test;
 import requestspecification.RequestSpecificationCreator;
 import static io.restassured.RestAssured.given;
 
-@Severity(SeverityLevel.CRITICAL)
+@Severity(SeverityLevel.BLOCKER)
 @DisplayName("Health Check's")
 public class HealthCheckTest {
 
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Health Check API")
     @Test
     public void healthCheck(){
@@ -28,7 +28,7 @@ public class HealthCheckTest {
 
     }
 
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Health Check Auth")
     @Test
     public void healthCheck_NoAuth(){
