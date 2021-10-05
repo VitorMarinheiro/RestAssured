@@ -109,14 +109,29 @@ public class VotesTest {
     @DisplayName("Deleting a Specific Vote")
     @Test
     public void deleteAVote(){
+
+        String payload = "{\"image_id\":\""+new Faker().name().firstName()+"\",\"sub_id\":\"my-user-1234\",\"value\":1}";
+
+        // Creating a Vote
+        Integer id = given()
+                .spec(RequestSpecificationCreator.requestSpecification())
+                .headers(HeaderCreator.headerWithAuthToken())
+                .contentType(ContentType.JSON)
+        .when()
+                .body(payload)
+                .post(ProjectConstants.URI_VOTES)
+        .then()
+                .extract().response().body().path("id");
+
+        // Deleting the vote
         given()
                 .spec(RequestSpecificationCreator.requestSpecification())
                 .headers(HeaderCreator.headerWithAuthToken())
-                .pathParam("id", 332393)
+                .pathParam("id", id)
         .when()
                 .delete(ProjectConstants.URI_VOTES+"/{id}")
         .then()
-                .statusCode(200);
+                .statusCode(200).log().body();
     }
 
 }
