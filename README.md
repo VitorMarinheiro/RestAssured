@@ -1,9 +1,9 @@
 # RestAssured
 
-Esse projeto utiliza a API pública [The Cat API - Cats as a Service
-](https://thecatapi.com/) para demonstrar como pode ser feita a utilização da biblioteca RestAssured em conjunto com outras Tecnologias como Maven, JUnit e AWS.
+This project uses the public [The Cat API - Cats as a Service
+](https://thecatapi.com/) to demonstrate how the RestAssured library can be used together with other Technologies such as Maven, JUnit and AWS.
 
-## Tecnologias
+## Technologies
 - :hotsprings:	[Java](https://www.java.com/)
 - :video_game:	[REST-assured](https://rest-assured.io/)
 - :space_invader:	[JUnit](https://junit.org/junit5/)
@@ -11,34 +11,35 @@ Esse projeto utiliza a API pública [The Cat API - Cats as a Service
 - :lock:	[AWS Parameter Store](https://docs.aws.amazon.com/pt_br/systems-manager/latest/userguide/systems-manager-parameter-store.html)
 
 
-## Configuração
-O projeto está utilizando o serviço AWS Parameter Store para gerenciar de forma segura a nossa chave de api.
+## Configuration
+To use The Cat API it is necessary that we have the api key. We need to [create an account](https://thecatapi.com/signup) and after that an email will be sent containing the api key.
+
+This project is using the AWS Parameter Store service to securely manage our api key.
 
  ###### AWS Parameter Store
 
-Caso queira **utilizar o AWS Parameter Store** será necessário apenas configurar sua conta da AWS diretamente na máquina utilizada e criar um Parâmetro do tipo *SecureString* com o nome de *CatAPI_Token* e contendo o valor da sua chave de api da CatAPI.
+If you want to **use the AWS Parameter Store** you will only need to configure your AWS account directly on the machine used and create a Parameter of type *SecureString* with the name of *CatAPI_Token* and containing the value of your CatAPI api key .
 
-Se o objetivo for **não fazer uso do AWS Parameter** Store basta acessar o arquivo **_src/main/java/header/HeaderCreator.java_** e seguir as instruções que estão apresentadas.
+If the goal is **not to use the AWS Parameter** Store, just access the **_src/main/java/header/HeaderCreator.java_** file and follow the instructions that are presented.
 
-
-## Executando os Testes
-Para execução de todos os testes contidos dentro do projeto é necessário apenas executar o comando de testes via maven:
+## Running the Tests
+To run all the tests contained within the project, it is only necessary to run the maven test command:
 ```
 mvn test
 ```
 
-Caso o objetivo seja executar apenas alguma classe de testes específica, pode-se utilizar o parâmetro ```-Dtest``` para seleção da classe:
+If the goal is to run just a specific test class, you can use the ```-Dtest``` parameter to select the class:
 ```
 mvn test -Dtest=VotesTest
 ```
 
-## Gerando o Allure Report
-Os arquivos necessários para a geração do Allure report estão sendo salvos no caminho **target/allure-results**, essa configuração está definida dentro do arquivo *.properties* do Allure que está localizado em **_src/test/resources/allure.properties_** dentro do projeto.
+## Generating the Allure Report
+The files needed to generate the Allure report are being saved in the path **target/allure-results**, this setting is defined inside the Allure *.properties* file which is located in **_src/test/resources/allure .properties_** within the project.
 ```
 allure.results.directory=target/allure-results
 ```
 
-Após a execução dos testes automatizados, é preciso apenas executar o comando abaixo para que o report seja criado e aberto automaticamente utilizando o seu navegador padrão:
+After running the automated tests, you only need to run the command below for the report to be created and opened automatically using your default browser:
 ```
 allure serve target/allure-results
 ```
