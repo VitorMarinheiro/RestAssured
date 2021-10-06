@@ -1,7 +1,5 @@
 # RestAssured
 
-- :us: If you want to read this article in English, click [here](README.md).README
-
 - :beginner: Caso você queira ler esse artigo em Português, clique [aqui](ReadmePT.md).
 
 This project uses the public [The Cat API - Cats as a Service
