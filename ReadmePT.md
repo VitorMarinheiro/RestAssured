@@ -1,8 +1,8 @@
 # RestAssured
 
-- :beginner: If you want to read this article in Portuguese, click [here](ReadmePT.md).
+- :us: If you want to read this article in English, click [here](README.md).README
 
-- :us: Caso você queira ler esse artigo em Português, clique [aqui](README.md).
+- :beginner: Caso você queira ler esse artigo em Português, clique [aqui](ReadmePT.md).
 
 Esse projeto utiliza a API pública [The Cat API - Cats as a Service
 ](https://thecatapi.com/) para demonstrar como pode ser feita a utilização da biblioteca RestAssured em conjunto com outras Tecnologias como Maven, JUnit e AWS.
